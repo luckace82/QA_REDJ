@@ -1,0 +1,42 @@
+{% extends 'master.html'%} {% block body%}
+
+
+
+
+<title>PYTHON</title>
+
+<ol style="padding-top:10px;">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Python</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Q/A</li>
+        </ol>
+    </nav>
+    <h3>Q/A</h3>
+
+    {% for x in question_list %}
+
+    <li style="padding-top:20px;">
+
+        <a style="display: block; width: 100%; text-align: center; text-decoration: none;" class="btn btn-outline-secondary" href="{% url 'pythonans' x.id %}">
+            <h5 style="text-align:left">{{x.question_txt}}</h5>
+        </a>
+
+
+
+
+
+        {% endfor %} {% endblock %}
+
+
+
+
+    </li>
+
+
+
+    {% block content%} {% endblock %}
+</ol>
+</div>

@@ -1,0 +1,42 @@
+
+
+{% extends 'master.html' %}
+{% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Python</a></li>
+        <li class="breadcrumb-item active" >Q/A</li>
+        <li class="breadcrumb-item active" aria-current="page">Answer of {{x.id}}</li>
+    </ol>
+</nav>
+
+    <div class="container">
+<h3>{{x.question_txt}}</h3>
+
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#b{{ x.id }}" aria-expanded="false" aria-controls="b{{ x.id }}">
+                    <h3>EXPECTED SOLUTION</h3>
+                </button>
+                <div class="collapse multi-collapse" id="b{{x.id }}">
+                    <div class="card">
+                        <pre>{{x.exp_sol}}</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <button class="btn btn-outline-info"  type="button" data-toggle="collapse" data-target="#c{{ x.id }}" aria-expanded="false" aria-controls="c{{ x.id }}">
+                    <h3>ANSWER</h3>
+                </button>
+                <div class="collapse multi-collapse" id="c{{ x.id }}">
+                    <div class="card">
+                        <pre>{{ x.answer }}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+{% endblock %}
